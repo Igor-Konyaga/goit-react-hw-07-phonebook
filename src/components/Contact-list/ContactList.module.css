@@ -1,0 +1,60 @@
+.list {
+  padding: 16px;
+  margin: 0;
+  max-width: 400px;
+  height: 188px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  list-style: none;
+  border: 2px solid #adadf5;
+  border-radius: 6px;
+  box-shadow: #00000059 0px 5px 15px;
+
+  overflow-y: scroll;
+
+  font-size: 18px;
+}
+
+.listItem {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.itemName {
+  width: 40%;
+}
+.itemTel {
+  width: 40%;
+  text-align: center;
+}
+
+
+.button {
+	padding: 4px 6px;
+	width: 20%;
+	
+	border: 2px solid #666060;
+  background-color: inherit;
+  border-radius: 6px;
+  cursor: pointer;
+  
+  transition-duration: 250ms;
+  
+  font-size: 16px;
+}
+
+.button:hover,
+.button:focus {
+	background-color: #f1ad1b;
+	color: #ffffff;
+}
+
+.itemTel,
+.itemName,
+.button {
+  min-height: 30px;
+}

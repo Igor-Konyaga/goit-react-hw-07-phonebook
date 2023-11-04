@@ -1,0 +1,22 @@
+.label {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+ 
+	margin-bottom: 16px;
+ }
+ 
+ .input {
+	padding: 4px 12px;
+	height: 36px;
+	max-width: 250px;
+ 
+	border-radius: 6px;
+	cursor: pointer;
+	outline: none;
+ }
+ .input:hover,
+ .input:focus {
+	border-color: rgb(249, 140, 16);
+ }
+ 
