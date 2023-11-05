@@ -1,23 +1,21 @@
 import css from './ContactForm.module.css';
-import { nanoid } from 'nanoid';
 import Notiflix from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsRedux';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contactsReducer.contacts);
+  const contacts = useSelector(state => state.contactsReducer.contacts.items);
 
   const handleSubmit = e => {
     e.preventDefault();
 
     const name = e.currentTarget.elements.name.value;
-    const number = e.currentTarget.elements.number.value;
+    const phone = e.currentTarget.elements.number.value;
 
     const contact = {
       name,
-      number,
-      id: nanoid(),
+      phone,
     };
 
     const audit = contacts.some(contact => contact.name === name);
@@ -28,7 +26,7 @@ export const ContactForm = () => {
       return;
     } else {
       dispatch(addContact(contact));
-		e.currentTarget.reset();
+      e.currentTarget.reset();
     }
   };
 
