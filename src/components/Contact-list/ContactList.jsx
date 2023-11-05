@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './ContactList.module.css';
 import { useEffect } from 'react';
-import {  requestContacts } from 'redux/contactsRedux';
+import { requestContacts } from 'redux/contactsRedux';
 import { RotatingLines } from 'react-loader-spinner';
 import { Contact } from './Contact/Contact';
 
@@ -13,7 +13,6 @@ export const ContactList = () => {
   const isLoading = useSelector(
     state => state.contactsReducer.contacts.isLoading
   );
-  const error = useSelector(state => state.contactsReducer.contacts.error);
 
   const normalizeFilter = filter.toLowerCase().trim();
 
@@ -42,7 +41,6 @@ export const ContactList = () => {
         {contacts.length > 0 &&
           filteredContacts.map(contact => {
             return (
-					
               <Contact
                 key={contact.id}
                 id={contact.id}
