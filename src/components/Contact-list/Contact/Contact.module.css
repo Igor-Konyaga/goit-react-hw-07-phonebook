@@ -1,0 +1,40 @@
+.listItem {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.itemName {
+  width: 40%;
+}
+.itemTel {
+  width: 50%;
+  text-align: center;
+}
+
+.button {
+  padding: 4px 8px;
+  min-width: 65px;
+  max-width: 100px;
+
+  border: 2px solid #666060;
+  background-color: inherit;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition-duration: 250ms;
+
+  font-size: 16px;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #f1ad1b;
+  color: #ffffff;
+}
+
+.itemName,
+.itemTel,
+.button {
+  min-height: 30px;
+}

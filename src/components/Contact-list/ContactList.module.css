@@ -1,8 +1,10 @@
 .list {
-  padding: 16px;
+  padding: 10px 14px;
   margin: 0;
-  width: 600px;
+  width: 500px;
   height: 300px;
+
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -18,43 +20,12 @@
   font-size: 18px;
 }
 
-.listItem {
-  display: flex;
-  gap: 6px;
-  align-items: baseline;
-}
-
-.itemName {
-  width: 40%;
-}
-.itemTel {
-  width: 40%;
-  text-align: center;
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 
-.button {
-	padding: 4px 6px;
-	width: 20%;
-	
-	border: 2px solid #666060;
-  background-color: inherit;
-  border-radius: 6px;
-  cursor: pointer;
-  
-  transition-duration: 250ms;
-  
-  font-size: 16px;
-}
 
-.button:hover,
-.button:focus {
-	background-color: #f1ad1b;
-	color: #ffffff;
-}
-
-.itemTel,
-.itemName,
-.button {
-  min-height: 30px;
-}

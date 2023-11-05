@@ -1,11 +1,15 @@
 import css from './ContactForm.module.css';
 import Notiflix from 'notiflix';
+import { RotatingLines } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsRedux';
+import { addContact, setIsLoadingForm } from 'redux/contactsRedux';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contactsReducer.contacts.items);
+  const isLoadingForm = useSelector(
+    state => state.contactsReducer.setIsLoadingForm
+  );
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -25,9 +29,13 @@ export const ContactForm = () => {
       e.currentTarget.reset();
       return;
     } else {
+      Notiflix.Notify.success(`Contact ${name} successfully added`);
+      dispatch(setIsLoadingForm(true));
       dispatch(addContact(contact));
-      e.currentTarget.reset();
+      dispatch(setIsLoadingForm(false));
     }
+
+    e.currentTarget.reset();
   };
 
   return (
@@ -42,7 +50,17 @@ export const ContactForm = () => {
       </label>
 
       <button className={css.btn} type="submit">
-        add contact
+        {isLoadingForm ? (
+          <RotatingLines
+            strokeColor="grey"
+            strokeWidth="4"
+            animationDuration="0.75"
+            width="18"
+            visible={true}
+          />
+        ) : (
+          ' add contact'
+        )}
       </button>
     </form>
   );
