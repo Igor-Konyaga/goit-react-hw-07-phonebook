@@ -10,11 +10,12 @@ export const ContactList = () => {
 
   const contacts = useSelector(state => state.contactsReducer.contacts.items);
   const filter = useSelector(state => state.contactsReducer.filter);
+  const normalizeFilter = filter.toLowerCase().trim();
+
   const isLoading = useSelector(
     state => state.contactsReducer.contacts.isLoading
   );
 
-  const normalizeFilter = filter.toLowerCase().trim();
 
   useEffect(() => {
     dispatch(requestContacts());
